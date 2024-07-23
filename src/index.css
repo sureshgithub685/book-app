@@ -1,13 +1,256 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+  margin: 0px;
+  padding: 0px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.book-list {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust as needed */
 }
+
+.book-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  border: 1px solid #e1e1e1;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+.action-section {
+  position: absolute;
+  bottom: 15px;
+  display: flex;
+  justify-content: center;
+  column-gap: 20px;
+  align-items: center;
+}
+
+.book-card:hover {
+  transform: translateY(-5px);
+}
+
+.book-card img {
+  max-width: 100%;
+  height: 300px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.book-card-content {
+  position: relative;
+  padding: 20px;
+  height: 240px;
+  overflow-y: auto;
+}
+
+.book-card h2 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.book-card p {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.book-card button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.book-card button:hover {
+  background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+  .book-card {
+    flex-direction: column;
+  }
+  
+  .book-card img {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+}
+
+
+@media (min-width: 768px) { /* Example breakpoint for tablets */
+  .book-list {
+    grid-template-columns: repeat(2, 1fr); /* 2 books per row */
+  }
+}
+
+@media (min-width: 1024px) { /* Example breakpoint for larger screens */
+  .book-list {
+    grid-template-columns: repeat(4, 1fr); /* 4 books per row */
+  }
+}
+
+.book {
+  background-color: #f0f0f0;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.book img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+}
+
+.book h2 {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+.book p {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.book button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.book button:hover {
+  background-color: #0056b3;
+}
+
+@media (max-width: 480px) { /* Example breakpoint for mobile devices */
+  .book {
+    padding: 10px;
+  }
+}
+
+.book-card button.cart-item {
+  background-color: red;
+  color: white;
+}
+
+
+/*
+  Header styles
+*/
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0b3691;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.cart-icon {
+  margin-right: 20px;
+  color: white;
+}
+
+.text-button {
+  background: none;
+  border: none;
+  color: #007bff; /* Change this to your desired color */
+  cursor: pointer;
+  font-size: 1rem;
+  text-decoration: underline;
+  padding: 0;
+}
+
+.text-button:hover {
+  color: #0056b3; /* Change this to your desired hover color */
+}
+
+.text-button:focus {
+  outline: none;
+}
+
+.cart-count {
+  background-color: #ffc107;
+  color: #333;
+  font-size: 0.8rem;
+  padding: 2px 6px;
+  border-radius: 50%;
+  position: absolute;
+  top: 0px;
+  right: 2px;
+}
+
+.cart-wrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
+}
+
+.d-flex {
+  display: flex;
+} 
+.col-gap-15 {
+  column-gap: 15px;
+}
+
+.checkout-footer {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  background-color: green;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+.search-container {
+  width: 100%;
+  display: flex;
+  justify-content: center; 
+  margin-top: 20px;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.search-bar {
+  width: 50%; 
+  padding: 10px; 
+  font-size: 16px; 
+  border: 1px solid #ccc; 
+  border-radius: 4px; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);}
+
+  .books{
+    margin-left: 10px;
+    height: 40px;
+    width: 70px;
+    font-size: 85%;
+    
+  }
+
+  .checkout-form{
+    margin-left: 30px;
+    display: flex;
+    flex-direction: column;
+    width: 10%; 
+    gap: 8px; 
+  
+    }
+    .selected-cart-item{
+      margin-left: 30px;
+    }
+
+  
+    
+ 
